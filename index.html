@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+     <link rel="stylesheet" href="./css/normalaize.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="container content__container">
+            <div class="content__box">
+            <h1 class="content__title">Login Form</h1>
+             
+            <form class="login__form" id="contentform">
+                <div class="content__wrapper">
+                <input class="content__input" type="text" id="name" placeholder="name" > <br>
+                <p class="content__text">Please Enter your name</p>
+            </div>
+            <div class="content__wrapper">
+                <input class="content__input" type="text" id="email" placeholder ="email"> <br>
+                <p class="content__text">Please Enter your email</p>
+            </div>
+            <div class="content__wrapper">
+                <input class="content__input" type="text" id="phone" placeholder="phone"> <br>
+                <p class="content__text">Please Enter your phone</p>
+            </div>
+            <div class="content__wrapper">
+                <select id="content__select">
+                    <option value="subject" class="content__option" style="width: 280px;">Subject*</option>
+                    <option value="subject" class="content__option">Subject*</option>
+                    <option value="subject" class="content__option">Subject*</option>
+                </select>
+                <p class="content__text">Please Enter your subject</p>
+            </div>
+                <div class="content__wrapper">
+                    <textarea id="textarea" placeholder="massage"></textarea>
+                <p class="content__text">Please Enter your messege</p>
+            </div>
+            <button class="content__btn" type="submit">submit</button>
+            </form>
+        </div>
+        <script>
+            const submit =document.querySelector(".content__btn") 
+            const contentform = document.querySelector("#contentform")
+            const name = document.querySelector("#name")
+            const email = document.querySelector("#email")
+            const phone = document.querySelector("#phone")
+            const subject = document.querySelector("#subject")
+            const messege = document.querySelector("#messege")
+            const body = document.querySelector("body")
+
+          contentform.addEventListener("submit", function(event){
+            event.preventDefault();
+
+
+            if(localStorage.getItem("name") === name.value
+            && localStorage.getItem("email") === email.value){
+             
+              alert("tabriklaymiz logindan o'tdingiz")
+              window.location.href = "https://britlix-responsivlik.netlify.app"
+            }
+            else{
+                body.style.backgroundColor = "red"
+                alert("username yoki email xato")
+            }
+        
+          })
+        </script>
+</body>
+</html>
